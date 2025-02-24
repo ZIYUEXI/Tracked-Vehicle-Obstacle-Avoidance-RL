@@ -9,7 +9,6 @@
 4. [快速开始](#快速开始)  
 5. [训练与测试](#训练与测试)  
 6. [结果与演示](#结果与演示)  
-7. [许可证](#许可证)  
 
 ---
 
@@ -66,24 +65,19 @@ git clone https://github.com/yourusername/Tracked-Vehicle-Obstacle-Avoidance-RL.
 #### 继续训练  
 运行contiueTrain.m即可，**注意运行前需要加载matlab_agent.mat**
 #### 评估指标  
-![untitled2](https://github.com/user-attachments/assets/4cc7c427-4a68-42cb-89c6-5b4a18ed8e3d)
+![untitled6](https://github.com/user-attachments/assets/abb26fb0-a8a1-4519-aaf5-dd262814ec77)
 
+![308079d7763ece9933f21ddf53465ea](https://github.com/user-attachments/assets/6d69f3c6-808a-46cb-a38f-bba9ac214c07)
 
 ---
 
 ### 📊 结果与演示  
 #### 训练曲线示例  
-![Training Progress](path/to/your_training_curve.png)  
+![untitled2](https://github.com/user-attachments/assets/4cc7c427-4a68-42cb-89c6-5b4a18ed8e3d)
+
+![c](https://github.com/user-attachments/assets/6a2cc585-b2b9-4070-9192-200d4f806421)
+
 
 #### 仿真演示  
-<!-- 用户可插入GIF或视频链接 -->  
-[![Demo Video](path/to/thumbnail.jpg)](https://youtube.com/demo_link)  
-
-#### 性能对比  
-| 指标               | PPO控制器 | 基准脚本 |  
-|--------------------|-----------|----------|  
-| 越障成功率         | 98%       | 62%      |  
-| 平均路径长度       | 12.3m     | 20.1m    |  
-| 能量消耗效率       | 0.81      | 0.57     |  
 
 ---
