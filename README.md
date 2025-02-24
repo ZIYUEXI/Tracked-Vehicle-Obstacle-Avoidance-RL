@@ -53,6 +53,37 @@ git clone https://github.com/yourusername/Tracked-Vehicle-Obstacle-Avoidance-RL.
 ```matlab  
 >> run('testenv.m')  % 启动PPO训练  
 ```  
+---
+
+#### 🎛️ 算法超参数配置  
+PPO 智能体关键训练参数定义（见 `testenv.m` 中的配置）：  
+```matlab  
+agentOptions = rlPPOAgentOptions(...
+    'SampleTime', -1, ...          % 异步采样模式  
+    'DiscountFactor', 0.895, ...   % 折扣因子（长期奖励权重）
+    'ExperienceHorizon', 6000, ... % 经验收集窗口长度  
+    'ClipFactor', 0.2, ...         % 策略更新剪切范围  
+    'EntropyLossWeight', 0.01, ... % 策略探索熵正则化权重  
+    'MiniBatchSize', 4096, ...     % 优化器批处理大小  
+    'NumEpoch', 40, ...            % 策略迭代次数  
+    'AdvantageEstimateMethod', "gae", ... % 广义优势估计  
+    'GAEFactor', 0.95);            % GAE 系数  
+```  
+
+#### 参数说明表  
+| 参数名                  | 值     | 功能描述                                                                 |  
+|-------------------------|--------|--------------------------------------------------------------------------|  
+| `DiscountFactor`        | 0.895  | 增大未来奖励权重，提升长期规划能力                                       |  
+| `ExperienceHorizon`     | 6000   | 平衡策略更新稳定性与学习效率                                             |  
+| `ClipFactor`            | 0.2    | 限制策略更新幅度防止震荡                                                 |  
+| `EntropyLossWeight`     | 0.01   | 控制探索-利用权衡（值越低策略确定性越强）                                |  
+| `MiniBatchSize`         | 4096   | 影响梯度更新稳定性（需与显存容量匹配）                                   |  
+| `NumEpoch`              | 40     | 单次经验回放利用率（过高可能导致过拟合）                                 |  
+| `AdvantageEstimateMethod` | GAE   | 使用广义优势估计降低方差                                                 |  
+| `GAEFactor`             | 0.95   | 权衡偏差与方差（接近1时更关注长期优势）                                  |  
+
+---
+
 
 #### 继续训练  
 运行contiueTrain.m即可，**注意运行前需要加载matlab_agent.mat**
