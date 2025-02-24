@@ -1,9 +1,6 @@
----
-
 # Tracked-Vehicle-Obstacle-Avoidance-RL  
 **🚀 基于PPO算法的履带式车辆2D避障与越障强化学习系统**  
 
----
 
 ## 目录  
 1. [项目简介](#项目简介)  
